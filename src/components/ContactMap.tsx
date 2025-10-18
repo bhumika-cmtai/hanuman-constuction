@@ -9,7 +9,7 @@ export default function ContactMap() {
             Find Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Visit our office or get directions to our location. We're conveniently located in the heart of Raipur.
+            Visit our office or get directions to our location. We&apos;re conveniently located in the heart of Raipur.
           </p>
         </div>
 

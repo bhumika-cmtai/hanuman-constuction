@@ -140,7 +140,7 @@ export default function ServiceCTA() {
               Ready to Build Your Dream Project?
             </h3>
             <p className="text-orange-100 mb-6">
-              Don't wait! Contact us today for a free consultation and let our expert team 
+              Don&apos;t wait! Contact us today for a free consultation and let our expert team 
               help you plan and execute your construction project with excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

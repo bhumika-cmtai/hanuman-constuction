@@ -1,4 +1,4 @@
-import { Phone, Mail, MessageCircle, ArrowRight, CheckCircle, Clock, Award } from 'lucide-react'
+import { Phone, Mail, MessageCircle, CheckCircle, Clock } from 'lucide-react'
 
 export default function ContactCTA() {
   const benefits = [
@@ -24,7 +24,7 @@ export default function ContactCTA() {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-orange-100 max-w-3xl mx-auto">
-            Don't wait! Contact us today for a free consultation and let our expert team 
+            Don&apos;t wait! Contact us today for a free consultation and let our expert team 
             help you plan and execute your construction project with excellence.
           </p>
         </div>

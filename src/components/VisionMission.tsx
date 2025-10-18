@@ -120,7 +120,7 @@ export default function VisionMission() {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4">Customer Focus</h4>
               <p className="text-gray-600">
-                Our clients' success is our success. We prioritize their needs and exceed their expectations.
+                Our clients&apos; success is our success. We prioritize their needs and exceed their expectations.
               </p>
             </div>
 

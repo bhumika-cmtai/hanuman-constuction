@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Calendar, MapPin, ArrowRight, Building2, Home, Factory, School } from 'lucide-react'
+import { MapPin, ArrowRight, Building2, Home, Factory, School } from 'lucide-react'
 
 export default function ProjectsPreview() {
   const projects = [
@@ -82,7 +82,7 @@ export default function ProjectsPreview() {
     { name: "Residential", count: projects.filter(p => p.category === "Residential").length, active: false },
     { name: "Commercial", count: projects.filter(p => p.category === "Commercial").length, active: false },
     { name: "Industrial", count: projects.filter(p => p.category === "Industrial").length, active: false },
-    { name: "Institutional", count: projects.filter(p => p.category === "Institutional").count, active: false },
+    { name: "Institutional", count: projects.filter(p => p.category === "Institutional").length, active: false },
     { name: "Mixed-Use", count: projects.filter(p => p.category === "Mixed-Use").length, active: false }
   ]
 

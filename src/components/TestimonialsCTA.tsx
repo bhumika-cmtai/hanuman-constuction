@@ -9,7 +9,7 @@ export default function TestimonialsCTA() {
             Join Our Satisfied Clients
           </h2>
           <p className="text-xl text-orange-100 max-w-3xl mx-auto">
-            Don't just take our word for it. Experience the quality and excellence that has made us 
+            Don&apos;t just take our word for it. Experience the quality and excellence that has made us 
             the trusted construction partner for over 1000+ clients across Chhattisgarh.
           </p>
         </div>
@@ -141,15 +141,15 @@ export default function TestimonialsCTA() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-orange-100">
               <div>
-                <div className="text-4xl font-bold text-white mb-2">"Excellent"</div>
+                <div className="text-4xl font-bold text-white mb-2">&quot;Excellent&quot;</div>
                 <p className="text-sm">Quality of work and professionalism</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-white mb-2">"Reliable"</div>
+                <div className="text-4xl font-bold text-white mb-2">&quot;Reliable&quot;</div>
                 <p className="text-sm">On-time delivery and communication</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-white mb-2">"Trustworthy"</div>
+                <div className="text-4xl font-bold text-white mb-2">&quot;Trustworthy&quot;</div>
                 <p className="text-sm">Transparent pricing and honest service</p>
               </div>
             </div>

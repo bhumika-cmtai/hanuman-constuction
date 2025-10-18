@@ -1,4 +1,4 @@
-import { Building2, Target, Users, Award, CheckCircle, ArrowRight } from 'lucide-react'
+import { Building2, Users, CheckCircle } from 'lucide-react'
 
 export default function CompanyProfile() {
   const achievements = [

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Calendar, MapPin, ArrowRight, Building2, Home, Factory, School, Eye, Heart } from 'lucide-react'
+import { MapPin, ArrowRight, Building2, Home, Factory, School, Eye, Heart } from 'lucide-react'
 
 export default function ProjectsGrid() {
   const projects = [

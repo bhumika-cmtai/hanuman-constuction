@@ -29,7 +29,7 @@ export default function TestimonialsHero() {
             Client Testimonials
           </h1>
           <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied clients have to say 
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say 
             about our construction services and project delivery.
           </p>
         </div>

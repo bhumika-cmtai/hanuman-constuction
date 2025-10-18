@@ -17,14 +17,14 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     
@@ -83,7 +83,7 @@ export default function ContactForm() {
             Get Your Free Quote
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Fill out the form below and we'll get back to you with a detailed quote and consultation
+            Fill out the form below and we&apos;ll get back to you with a detailed quote and consultation
           </p>
         </div>
 

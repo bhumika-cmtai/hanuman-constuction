@@ -16,7 +16,7 @@ export default function ProjectsCTA() {
           </h2>
           <p className="text-xl text-orange-100 max-w-3xl mx-auto">
             Join hundreds of satisfied clients who have trusted us with their construction needs. 
-            Let's build something amazing together.
+            Let&apos;s build something amazing together.
           </p>
         </div>
 

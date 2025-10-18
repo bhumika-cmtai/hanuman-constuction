@@ -50,7 +50,7 @@ export default function ContactHero() {
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Ready to start your construction project? Contact us today for a free consultation, 
-            project quote, or any questions you may have. We're here to help bring your vision to life.
+            project quote, or any questions you may have. We&apos;re here to help bring your vision to life.
           </p>
         </div>
 

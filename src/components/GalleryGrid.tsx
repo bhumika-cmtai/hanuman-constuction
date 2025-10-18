@@ -3,8 +3,22 @@
 import { useState } from 'react'
 import { Heart, Eye, Share2, Download, Play, Calendar, MapPin, Building2, Home, Factory, School } from 'lucide-react'
 
+interface GalleryItem {
+  id: number
+  title: string
+  category: string
+  location: string
+  year: string
+  image: string
+  type: string
+  likes: number
+  views: number
+  icon: React.ComponentType<{ className?: string }>
+  description: string
+}
+
 export default function GalleryGrid() {
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null)
 
   const galleryItems = [
     {
@@ -165,7 +179,7 @@ export default function GalleryGrid() {
     }
   ]
 
-  const openModal = (item) => {
+  const openModal = (item: GalleryItem) => {
     setSelectedImage(item)
   }
 

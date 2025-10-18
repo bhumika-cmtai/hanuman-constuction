@@ -1,4 +1,4 @@
-import { Building2, Home, Factory, School, Calendar, MapPin, ArrowRight } from 'lucide-react'
+import { Building2, Home, Factory, School, Calendar, MapPin } from 'lucide-react'
 
 export default function ProjectsHero() {
   const projectStats = [

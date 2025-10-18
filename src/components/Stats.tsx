@@ -84,7 +84,7 @@ export default function Stats() {
       }
 
       requestAnimationFrame(animate)
-    }, [isVisible, end, duration])
+    }, [end, duration])
 
     return <span>{count}</span>
   }

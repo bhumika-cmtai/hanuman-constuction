@@ -156,7 +156,7 @@ export default function ValuesSection() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Innovation Awards</h4>
                   <p className="text-gray-600">
-                    We've received recognition for implementing innovative construction techniques and sustainable practices.
+                    We&apos;ve received recognition for implementing innovative construction techniques and sustainable practices.
                   </p>
                 </div>
               </div>

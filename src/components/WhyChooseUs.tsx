@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are committed to delivering exceptional construction services that exceed your expectations. 
-            Here's what sets us apart from the competition.
+            Here&apos;s what sets us apart from the competition.
           </p>
         </div>
 

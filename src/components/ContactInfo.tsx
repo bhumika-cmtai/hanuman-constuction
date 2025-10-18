@@ -59,7 +59,7 @@ export default function ContactInfo() {
             Contact Information
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get in touch with us through any of the following channels. We're here to help with all your construction needs.
+            Get in touch with us through any of the following channels. We&apos;re here to help with all your construction needs.
           </p>
         </div>
 

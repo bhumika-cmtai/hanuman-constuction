@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight, Calendar, MapPin, Building2, Home, Factory, School } from 'lucide-react'
+import { Star, Quote, ChevronLeft, ChevronRight, Building2, Home, Factory, School } from 'lucide-react'
 
 export default function TestimonialsGrid() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -145,7 +145,7 @@ export default function TestimonialsGrid() {
               </div>
               
               <blockquote className="text-xl md:text-2xl text-gray-800 text-center mb-8 leading-relaxed">
-                "{current.content}"
+                &quot;{current.content}&quot;
               </blockquote>
               
               <div className="flex items-center justify-center mb-6">
@@ -262,7 +262,7 @@ export default function TestimonialsGrid() {
               </div>
               
               <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                "{testimonial.content.substring(0, 150)}..."
+                &quot;{testimonial.content.substring(0, 150)}...&quot;
               </p>
               
               <div className="pt-4 border-t border-gray-100">

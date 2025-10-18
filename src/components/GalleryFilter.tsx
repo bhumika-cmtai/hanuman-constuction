@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Camera, Video, Image, Building2, Home, Factory, School, Calendar, MapPin } from 'lucide-react'
+import { Camera, Video, Image, Building2, Home, Factory, School, MapPin } from 'lucide-react'
 
 export default function GalleryFilter() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -41,7 +41,7 @@ export default function GalleryFilter() {
             Filter Gallery
           </h2>
           <p className="text-lg text-gray-600">
-            Browse our gallery by media type, project category, or year to find exactly what you're looking for
+            Browse our gallery by media type, project category, or year to find exactly what you&apos;re looking for
           </p>
         </div>
 

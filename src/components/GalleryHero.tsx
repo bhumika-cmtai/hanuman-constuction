@@ -1,4 +1,4 @@
-import { Camera, Video, Image, Eye, Heart, Share2 } from 'lucide-react'
+import { Camera, Video, Image, Eye } from 'lucide-react'
 
 export default function GalleryHero() {
   const galleryStats = [

@@ -36,7 +36,7 @@ export default function ProjectsFilter() {
             Filter Projects
           </h2>
           <p className="text-lg text-gray-600">
-            Browse our projects by category, stage, or year to find exactly what you're looking for
+            Browse our projects by category, stage, or year to find exactly what you&apos;re looking for
           </p>
         </div>
 
