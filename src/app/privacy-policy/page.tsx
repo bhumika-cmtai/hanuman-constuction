@@ -1,4 +1,4 @@
-import { Shield } from 'lucide-react'; // Corrected: Unused 'FileText' import is removed.
+import { Shield } from 'lucide-react'; // 'FileText' has been removed from this line.
 
 export default function PrivacyPolicyPage() {
   return (
@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
           <div className="prose prose-lg max-w-none">
-            {/* Corrected: All " characters replaced with &quot; */}
+            {/* FIX: All quotes " are replaced with &quot; */}
             <p className='text-black mt-5 mb-8'>
               Hanuman Constructions (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting the privacy of our clients and website visitors. This Privacy Policy outlines the types of personal information we collect through our website, how it is used, and the steps we take to ensure its protection.
             </p>
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
               <li className='text-black mt-5 mb-8'>
                 <strong>Usage Data:</strong> We may automatically collect information about how you interact with our website. This can include your IP address, browser type, pages viewed, and the duration of your visit. This data is typically anonymized and used for analytics.
               </li>
-              {/* Corrected: " and ' characters replaced with &quot; and &apos; */}
+              {/* FIX: All quotes " and apostrophes ' are replaced with &quot; and &apos; */}
               <li className='text-black mt-5 mb-8'>
                 <strong>Cookies:</strong> Our website may use &quot;cookies&quot; to enhance user experience. Cookies are small files placed on your device that help us analyze web traffic and improve our site&apos;s functionality. You can choose to disable cookies through your browser settings.
               </li>
