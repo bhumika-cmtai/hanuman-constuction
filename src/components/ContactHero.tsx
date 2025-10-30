@@ -6,7 +6,7 @@ export default function ContactHero() {
       icon: Phone,
       title: "Call Us",
       description: "Speak directly with our project manager",
-      contact: "+91 98765 43210",
+      contact: "+91 98765 43210", 
       action: "Call Now",
       color: "bg-green-500"
     },
@@ -71,7 +71,7 @@ export default function ContactHero() {
                 <p className="text-orange-100 mb-4 text-sm">
                   {method.description}
                 </p>
-                <div className="text-white font-medium mb-4">
+                <div className="text-white font-medium mb-4 break-words">
                   {method.contact}
                 </div>
                 <button className="inline-flex items-center text-orange-300 hover:text-orange-200 font-medium transition-colors group-hover:translate-x-1">
@@ -125,7 +125,6 @@ export default function ContactHero() {
                   <p className="text-white font-semibold">+91 98765 43210</p>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
                   <Mail className="h-6 w-6 text-white" />
@@ -133,7 +132,7 @@ export default function ContactHero() {
                 <div>
                   <h4 className="text-lg font-semibold text-white">Email Response</h4>
                   <p className="text-orange-100">We respond within 2 hours</p>
-                  <p className="text-white font-semibold">constructionhanuman99@gmail.com</p>
+                  <p className="text-white font-semibold break-all">constructionhanuman99@gmail.com</p>
                 </div>
               </div>
             </div>

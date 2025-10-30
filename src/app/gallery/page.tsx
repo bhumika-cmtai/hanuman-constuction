@@ -14,7 +14,7 @@ export default function GalleryPage() {
     <div className="min-h-screen">
       <GalleryHero />
       <GalleryFilter />
-      <GalleryGrid />
+      {/* <GalleryGrid /> */}
     </div>
   )
 }

@@ -19,7 +19,7 @@ export default function AboutPage() {
       <CompanyProfile />
       <VisionMission />
       <ValuesSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <WhyChooseUs />
     </div>
   )

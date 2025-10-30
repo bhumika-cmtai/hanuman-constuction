@@ -24,14 +24,44 @@ export default function ContactForm() {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    alert('Thank you for your inquiry! We will contact you within 2 hours.')
+
+    // --- Start of new logic ---
+
+    // 1. **IMPORTANT**: Replace with your actual WhatsApp number in international format (e.g., 91 for India).
+    const whatsappNumber = '919876543210' 
+
+    // 2. Create the message string from the form data.
+    const message = `
+*New Project Inquiry*
+
+*Full Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Company:* ${formData.company || 'N/A'}
+
+*Project Type:* ${formData.projectType}
+*Budget Range:* ${formData.budget || 'N/A'}
+*Timeline:* ${formData.timeline || 'N/A'}
+
+*Project Details:*
+${formData.message}
+    `.trim() // .trim() removes any leading/trailing whitespace.
+
+    // 3. Encode the message for use in a URL.
+    const encodedMessage = encodeURIComponent(message)
+
+    // 4. Construct the WhatsApp "Click to Chat" URL.
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+    // 5. Open the URL in a new browser tab.
+    window.open(whatsappUrl, '_blank')
+
+    // --- End of new logic ---
+
+    // Reset the form after submission
     setFormData({
       name: '',
       email: '',
@@ -108,7 +138,7 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full pl-10 pr-4 py-3 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -126,7 +156,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full pl-10 pr-4 py-3 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -146,7 +176,7 @@ export default function ContactForm() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full pl-10 pr-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -163,7 +193,7 @@ export default function ContactForm() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full pl-10 pr-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                       placeholder="Enter company name (optional)"
                     />
                   </div>
@@ -179,7 +209,7 @@ export default function ContactForm() {
                   value={formData.projectType}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                  className="w-full px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 >
                   <option value="">Select project type</option>
                   {projectTypes.map((type, index) => (
@@ -197,7 +227,7 @@ export default function ContactForm() {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                   >
                     <option value="">Select budget range</option>
                     {budgetRanges.map((range, index) => (
@@ -214,7 +244,7 @@ export default function ContactForm() {
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                   >
                     <option value="">Select timeline</option>
                     {timelines.map((timeline, index) => (
@@ -236,7 +266,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full pl-10 pr-4 text-black py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     placeholder="Describe your project requirements, location, and any specific needs..."
                   />
                 </div>
@@ -255,7 +285,7 @@ export default function ContactForm() {
                 ) : (
                   <>
                     <Send className="mr-2 h-5 w-5" />
-                    Send Inquiry
+                    Send Inquiry via WhatsApp
                   </>
                 )}
               </button>

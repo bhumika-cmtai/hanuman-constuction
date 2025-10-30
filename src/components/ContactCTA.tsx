@@ -145,10 +145,7 @@ export default function ContactCTA() {
               Send Email
             </a>
             
-            <button className="inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-400 transition-colors duration-200 group">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Schedule Visit
-            </button>
+            
           </div>
         </div>
 

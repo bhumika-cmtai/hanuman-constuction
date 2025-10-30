@@ -15,7 +15,7 @@ export default function TestimonialsStats() {
       label: "Happy Clients",
       description: "Satisfied customers across all sectors",
       color: "text-blue-500"
-    },
+    }, 
     {
       icon: Award,
       value: "98%",

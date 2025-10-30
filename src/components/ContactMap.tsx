@@ -1,6 +1,12 @@
 import { MapPin, Navigation, Phone, Mail, Clock } from 'lucide-react'
 
 export default function ContactMap() {
+  const address = "Hanuman Constructions, Near Ambuja Mall, Vidhansabha Road, Saddu, Raipur, Chhattisgarh";
+  const encodedAddress = encodeURIComponent(address);
+
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,20 +21,19 @@ export default function ContactMap() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map */}
-          <div className="relative">
-            <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-orange-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Interactive Map</h3>
-                <p className="text-gray-600 mb-4">Click to view our location on Google Maps</p>
-                <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors">
-                  Open in Google Maps
-                </button>
-              </div>
-            </div>
+          <div className="relative h-96 lg:h-auto rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src={mapEmbedUrl}
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0} 
+              title="Google Map of Hanuman Constructions"
+              allowFullScreen
+            ></iframe>
             
-            {/* Map Overlay Info */}
-            <div className="absolute top-4 left-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-4 max-w-xs">
+            <div className="absolute top-4 left-4 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-4 max-w-xs shadow-md">
               <h4 className="font-semibold text-gray-900 mb-2">Hanuman Constructions</h4>
               <p className="text-sm text-gray-600 mb-2">Near Ambuja Mall, Vidhansabha Road</p>
               <p className="text-sm text-gray-600">Saddu, Raipur (C.G.)</p>
@@ -54,6 +59,15 @@ export default function ContactMap() {
                       Saddu, Raipur (C.G.) 492001<br />
                       India
                     </p>
+                    <a 
+                      href={googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-3 text-orange-600 font-semibold hover:text-orange-800 transition-colors"
+                    >
+                      <Navigation className="h-5 w-5 mr-2" />
+                      Get Directions
+                    </a>
                   </div>
                 </div>
 
@@ -63,11 +77,11 @@ export default function ContactMap() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">How to Reach</h4>
-                    <ul className="text-gray-600 space-y-1">
-                      <li>• 5 minutes from Raipur Railway Station</li>
-                      <li>• 10 minutes from Swami Vivekananda Airport</li>
-                      <li>• Near Vidhansabha Metro Station</li>
-                      <li>• Ample parking available</li>
+                    <ul className="text-gray-600 space-y-1 list-disc list-inside">
+                      <li>5 minutes from Raipur Railway Station</li>
+                      <li>10 minutes from Swami Vivekananda Airport</li>
+                      <li>Near Vidhansabha Metro Station</li>
+                      <li>Ample parking available</li>
                     </ul>
                   </div>
                 </div>
@@ -117,11 +131,11 @@ export default function ContactMap() {
 
               <div className="mt-6 pt-6 border-t border-orange-200">
                 <h4 className="font-semibold text-gray-900 mb-3">Nearby Landmarks</h4>
-                <ul className="text-gray-600 space-y-1 text-sm">
-                  <li>• Ambuja Mall (100 meters)</li>
-                  <li>• Vidhansabha Building (200 meters)</li>
-                  <li>• Raipur City Center (500 meters)</li>
-                  <li>• Hotel Piccadilly (300 meters)</li>
+                <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                  <li>Ambuja Mall (100 meters)</li>
+                  <li>Vidhansabha Building (200 meters)</li>
+                  <li>Raipur City Center (500 meters)</li>
+                  <li>Hotel Piccadilly (300 meters)</li>
                 </ul>
               </div>
             </div>

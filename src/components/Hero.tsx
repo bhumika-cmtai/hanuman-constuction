@@ -83,17 +83,13 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-200 group text-sm sm:text-base"
                 >
                   {slides[currentSlide].cta}
                   <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200 group text-sm sm:text-base">
-                  <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Watch Our Story</span>
-                  <span className="sm:hidden">Watch</span>
-                </button>
+                
               </div>
 
               {/* Features */}

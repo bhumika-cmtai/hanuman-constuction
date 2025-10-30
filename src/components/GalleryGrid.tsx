@@ -6,7 +6,7 @@ import { Heart, Eye, Share2, Download, Play, Calendar, MapPin, Building2, Home, 
 interface GalleryItem {
   id: number
   title: string
-  category: string
+  category: string 
   location: string
   year: string
   image: string

@@ -137,10 +137,10 @@ export default function Footer() {
               © 2024 HTC Hanuman Constructions. All rights reserved.
             </p>
             <div className="flex space-x-4 sm:space-x-6">
-              <Link href="/privacy" className="text-gray-400 hover:text-orange-500 transition-colors text-xs sm:text-sm">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-orange-500 transition-colors text-xs sm:text-sm">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-orange-500 transition-colors text-xs sm:text-sm">
+              <Link href="/terms-conditions" className="text-gray-400 hover:text-orange-500 transition-colors text-xs sm:text-sm">
                 Terms of Service
               </Link>
             </div>

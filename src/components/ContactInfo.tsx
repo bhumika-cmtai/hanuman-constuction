@@ -81,7 +81,7 @@ export default function ContactInfo() {
                 {contact.details.map((detail, detailIndex) => (
                   <div key={detailIndex}>
                     <h4 className="font-medium text-gray-900 mb-1">{detail.label}</h4>
-                    <p className="text-gray-600 text-sm">{detail.value}</p>
+                    <p className="text-gray-600 text-sm break-words">{detail.value}</p>
                   </div>
                 ))}
               </div>

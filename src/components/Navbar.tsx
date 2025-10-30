@@ -12,7 +12,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Projects', href: '/projects' },
+    // { name: 'Projects', href: '/projects' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'Contact', href: '/contact' },
@@ -23,11 +23,11 @@ export default function Navbar() {
       <div className="w-full px-2 sm:px-4 lg:px-6 xl:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex items-center flex-shrink-0 ml-4">
             <Link href="/" className="flex items-center space-x-2 lg:space-x-3">
-              <div className="relative w-18 h-18 sm:w-24 sm:h-24 lg:w-30 lg:h-30">
+              <div className="relative ml-10 w-18 h-18 sm:w-24 sm:h-24 lg:w-30 lg:h-30">
                 <Image
-                  src="/logo.png"
+                  src="/logo-removebg.png"
                   alt="HTC Hanuman Construction Logo"
                   fill
                   className="object-contain"

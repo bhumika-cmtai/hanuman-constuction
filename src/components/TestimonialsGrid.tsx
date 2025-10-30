@@ -1,280 +1,160 @@
 'use client'
 
-import { useState } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight, Building2, Home, Factory, School } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Star, Building2, Home, Factory, School, Landmark } from 'lucide-react'
 
-export default function TestimonialsGrid() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+export default function TestimonialsSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const testimonials = [
-    {
-      id: 1,
-      name: "Rajesh Kumar",
-      position: "Business Owner",
-      company: "Kumar Industries",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "Hanuman Constructions delivered our industrial facility ahead of schedule and within budget. Their attention to detail and quality of work is exceptional. The team was professional, transparent, and always kept us informed about the progress. Highly recommended for any construction project.",
-      project: "Industrial Manufacturing Unit",
-      projectType: "Industrial",
-      location: "Bilaspur, C.G.",
-      year: "2023",
-      duration: "18 months",
-      budget: "₹5 Crores",
-      icon: Factory,
-      features: ["Large Scale", "Advanced Systems", "Safety Compliant", "Efficient Layout"]
-    },
-    {
-      id: 2,
-      name: "Priya Sharma",
-      position: "Homeowner",
-      company: "Residential Client",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "We built our dream home with Hanuman Constructions. The team was professional, transparent, and always kept us informed about the progress. The final result exceeded our expectations. The quality of work and attention to detail is outstanding.",
-      project: "Luxury Residential Villa",
-      projectType: "Residential",
-      location: "Naya Raipur, C.G.",
-      year: "2024",
-      duration: "12 months",
-      budget: "₹2 Crores",
-      icon: Home,
-      features: ["Luxury Finishes", "Private Amenities", "Premium Location", "Custom Design"]
-    },
-    {
-      id: 3,
-      name: "Dr. Amit Verma",
-      position: "Director",
-      company: "Verma Educational Trust",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "The school building project was completed with utmost precision and quality. Hanuman Constructions understood our requirements perfectly and delivered a world-class educational facility. The team's expertise and dedication are commendable.",
-      project: "Educational Institution Campus",
-      projectType: "Institutional",
-      location: "Durg, C.G.",
-      year: "2023",
-      duration: "20 months",
-      budget: "₹3 Crores",
-      icon: School,
-      features: ["Modern Classrooms", "Laboratories", "Sports Facilities", "Library"]
-    },
-    {
-      id: 4,
-      name: "Sunita Patel",
-      position: "Property Developer",
-      company: "Patel Developers",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "We have been working with Hanuman Constructions for multiple projects. Their reliability, quality of work, and customer service are outstanding. They are our go-to construction partner for all our development projects.",
-      project: "Commercial Office Complex",
-      projectType: "Commercial",
-      location: "Bhilai, C.G.",
-      year: "2024",
-      duration: "24 months",
-      budget: "₹8 Crores",
-      icon: Building2,
-      features: ["15 Floors", "Energy Efficient", "Modern Facilities", "Prime Location"]
-    },
-    {
-      id: 5,
-      name: "Vikram Singh",
-      position: "Factory Manager",
-      company: "Singh Manufacturing",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "The warehouse construction was completed on time despite challenging weather conditions. The team's dedication and problem-solving skills are commendable. The quality of work is excellent and the project was delivered within budget.",
-      project: "Industrial Warehouse",
-      projectType: "Industrial",
-      location: "Korba, C.G.",
-      year: "2024",
-      duration: "15 months",
-      budget: "₹4 Crores",
-      icon: Factory,
-      features: ["Modern Storage", "Logistics Facilities", "Loading Docks", "Security Systems"]
-    },
-    {
-      id: 6,
-      name: "Anita Desai",
-      position: "Hospital Administrator",
-      company: "City Hospital",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      rating: 5,
-      content: "The hospital construction project was handled with great care and attention to detail. The team understood the specific requirements of a healthcare facility and delivered exceptional results. We are very satisfied with their work.",
-      project: "Hospital Complex",
-      projectType: "Institutional",
-      location: "Raipur, C.G.",
-      year: "2023",
-      duration: "32 months",
-      budget: "₹12 Crores",
-      icon: School,
-      features: ["Modern Facilities", "Patient Care", "Emergency Services", "Specialized Units"]
+    { id: 1, name: "Gokul krishna construction", rating: 5, content: "A successful collaboration marked by professionalism and a commitment to quality.", icon: Building2 },
+    { id: 2, name: "V.jain construction", rating: 5, content: "Their team's dedication and expertise were instrumental to our project's success.", icon: Building2 },
+    { id: 3, name: "Jyoti steel and construction", rating: 5, content: "We were impressed by their efficient project management and high-quality results.", icon: Factory },
+    { id: 4, name: "Rajkumar builders", rating: 5, content: "A reliable and skilled partner. We highly recommend their construction services.", icon: Building2 },
+    { id: 5, name: "Ashoka build con", rating: 5, content: "Exceeded our expectations with their attention to detail and professional conduct.", icon: Building2 },
+    { id: 6, name: "Bsbk project LTd", rating: 5, content: "A seamless partnership that delivered outstanding results on time and within budget.", icon: Building2 },
+    { id: 7, name: "Gkc project", rating: 5, content: "Their commitment to excellence is evident in every aspect of their work.", icon: Building2 },
+    { id: 8, name: "PRA. Associate", rating: 5, content: "A trusted partner who consistently delivers high-quality construction solutions.", icon: School },
+    { id: 9, name: "L&T LTD", rating: 5, content: "Working with them was a great experience, marked by expertise and reliability.", icon: Factory },
+    { id: 10, name: "BSCPL PROJECT", rating: 5, content: "Their team demonstrated exceptional skill and dedication throughout our project.", icon: Building2 },
+    { id: 11, name: "Sewasingh oberoi and construction", rating: 5, content: "We are extremely satisfied with the quality and professionalism they provided.", icon: Building2 },
+    { id: 12, name: "Surabhi infrastructure", rating: 5, content: "A top-tier construction company that we would gladly work with again.", icon: Building2 },
+    { id: 13, name: "Amit construction", rating: 5, content: "Delivered excellent results through their skilled team and efficient processes.", icon: Building2 },
+    { id: 14, name: "AB project LTD", rating: 5, content: "A fantastic partner who helped us achieve our project goals successfully.", icon: Building2 },
+    { id: 15, name: "Patel Enterprises", rating: 5, content: "Their professionalism and commitment to quality were evident from start to finish.", icon: Factory },
+    { id: 16, name: "P&T infra", rating: 5, content: "An outstanding partner who delivered on their promises with great results.", icon: Building2 },
+    { id: 17, name: "GMR Ltd", rating: 5, content: "Their industry expertise and reliable execution make them a leader in the field.", icon: Factory },
+    { id: 18, name: "Punj loyed Pvt Ltd", rating: 5, content: "A successful project completed with a high degree of professionalism and skill.", icon: Building2 },
+    { id: 19, name: "Triksha Associate", rating: 5, content: "We appreciate their collaborative approach and the excellent quality of their work.", icon: School },
+    { id: 20, name: "Dilip Buildcon", rating: 5, content: "A leader in the industry. Their performance on our project was exceptional.", icon: Building2 },
+    { id: 21, name: "Chaohan brothers", rating: 5, content: "Their team's hard work and dedication resulted in a project we are proud of.", icon: Building2 },
+    { id: 22, name: "Saffire green", rating: 5, content: "A pleasure to work with. They are professional, reliable, and highly skilled.", icon: Home },
+    { id: 23, name: "Shree sai infra", rating: 5, content: "Delivered a high-quality project on time, meeting all our specifications.", icon: Building2 },
+    { id: 24, name: "Swarn bhoomi project", rating: 5, content: "We are very pleased with the outcome of our collaboration and their service.", icon: Home },
+    { id: 25, name: "Vinayak developer", rating: 5, content: "A dependable partner who consistently provides excellent construction services.", icon: Home },
+    { id: 26, name: "Avinash capital homes", rating: 5, content: "Their expertise in the residential sector is unmatched. A great partner.", icon: Home },
+    { id: 27, name: "Aishwarryam ville", rating: 5, content: "The quality of their workmanship and their professional service are top-notch.", icon: Home },
+    { id: 28, name: "Fortune resources pvt ltd", rating: 5, content: "They managed our project with great efficiency and professionalism.", icon: Building2 },
+    { id: 29, name: "Arti buildcon", rating: 5, content: "A great partner for any construction project. They deliver quality and value.", icon: Building2 },
+    { id: 30, name: "Ambey real infra", rating: 5, content: "Their team is knowledgeable and dedicated, ensuring a successful project.", icon: Building2 },
+    { id: 31, name: "Shree ji kripa project", rating: 5, content: "We had a positive experience and are satisfied with the final results.", icon: Building2 },
+    { id: 32, name: "Reliance jio infocom Ltd", rating: 5, content: "Their ability to handle large-scale projects is impressive. A reliable partner.", icon: Factory },
+    { id: 33, name: "TVS info", rating: 5, content: "Professional, efficient, and committed to delivering high-quality infrastructure.", icon: Building2 },
+    { id: 34, name: "Abhi Engineering pvt ltd", rating: 5, content: "Their engineering and construction expertise is truly commendable.", icon: Factory },
+    { id: 35, name: "Aarati infrastructure and buildcom Ltd", rating: 5, content: "A trusted name in infrastructure. They deliver on their commitments.", icon: Building2 },
+    { id: 36, name: "Navdurga spat ltd", rating: 5, content: "Their work on our industrial project was excellent and met all standards.", icon: Factory },
+    { id: 37, name: "Hi.tech steel", rating: 5, content: "A knowledgeable and reliable partner for industrial construction needs.", icon: Factory },
+    { id: 38, name: "Godavari steel", rating: 5, content: "Their attention to detail and quality control is highly impressive.", icon: Factory },
+    { id: 39, name: "Apollo industries", rating: 5, content: "Completed our project efficiently and to the highest standards of quality.", icon: Factory },
+    { id: 40, name: "Chhattisgarh turism board", rating: 5, content: "A key partner in developing public infrastructure. Their work is commendable.", icon: Landmark },
+    { id: 41, name: "Chhattisgarh grih nirman mandle", rating: 5, content: "Their contribution to public housing has been invaluable. A trusted partner.", icon: Landmark },
+    { id: 42, name: "Nagar palika nigam", rating: 5, content: "A reliable contractor for municipal projects, delivering quality and value.", icon: Landmark },
+    { id: 43, name: "Public work department", rating: 5, content: "Consistently delivers high-quality work on important public infrastructure projects.", icon: Landmark },
+    { id: 44, name: "CPWD", rating: 5, content: "A trusted government partner known for quality, integrity, and timely delivery.", icon: Landmark },
+    { id: 45, name: "Smart city raipur", rating: 5, content: "An essential partner in the development of our city's modern infrastructure.", icon: Landmark },
+    { id: 46, name: "Quantum Innovations", rating: 5, content: "Brought innovative solutions and a high level of expertise to our project.", icon: Building2 },
+    { id: 47, name: "Zenith Developments", rating: 5, content: "A reliable developer who consistently delivers high-quality construction outcomes.", icon: Home },
+    { id: 48, name: "Apex Solutions", rating: 5, content: "Working with them was a seamless experience, resulting in a top-quality facility.", icon: Building2 },
+  ];
+  
+  const testimonialsPerPage = 6;
+  const totalSlides = Math.ceil(testimonials.length / testimonialsPerPage);
+  const autoScrollInterval = 5000; // 5 seconds
+  
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const resetAutoScroll = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
     }
-  ]
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
+    }, autoScrollInterval);
+  };
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-  }
+  useEffect(() => {
+    resetAutoScroll();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [totalSlides]);
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
-
-  const current = testimonials[currentTestimonial]
+  const goToSlide = (slideIndex: number) => {
+    setCurrentIndex(slideIndex);
+    resetAutoScroll(); // Reset timer on manual navigation
+  };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Client Testimonials
+            Our Valued Clients & Partners
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Read what our satisfied clients have to say about our construction services and project delivery
+            We are proud to have collaborated with a diverse range of leading companies and government bodies.
           </p>
         </div>
 
-        {/* Featured Testimonial */}
-        <div className="relative max-w-6xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200 rounded-full -translate-y-16 translate-x-16 opacity-20"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-300 rounded-full translate-y-12 -translate-x-12 opacity-20"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-center mb-6">
-                <Quote className="h-12 w-12 text-orange-600 opacity-50" />
-              </div>
-              
-              <blockquote className="text-xl md:text-2xl text-gray-800 text-center mb-8 leading-relaxed">
-                &quot;{current.content}&quot;
-              </blockquote>
-              
-              <div className="flex items-center justify-center mb-6">
-                {[...Array(current.rating)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center mb-4">
-                  <img
-                    src={current.image}
-                    alt={current.name}
-                    className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
-                  />
-                </div>
-                <h4 className="text-2xl font-semibold text-gray-900 mb-2">
-                  {current.name}
-                </h4>
-                <p className="text-orange-600 font-medium mb-2">
-                  {current.position}
-                </p>
-                <p className="text-gray-600 mb-4">
-                  {current.company}
-                </p>
-              </div>
-
-              {/* Project Details */}
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <current.icon className="h-6 w-6 text-orange-600" />
-                  </div>
-                </div>
-                <h5 className="text-lg font-semibold text-gray-900 text-center mb-4">
-                  Project: {current.project}
-                </h5>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
-                  <div>
-                    <div className="text-gray-500">Type</div>
-                    <div className="font-semibold text-gray-900">{current.projectType}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Location</div>
-                    <div className="font-semibold text-gray-900">{current.location}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Duration</div>
-                    <div className="font-semibold text-gray-900">{current.duration}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Budget</div>
-                    <div className="font-semibold text-gray-900">{current.budget}</div>
-                  </div>
+        {/* Slider Container */}
+        <div className="relative overflow-hidden">
+          {/* Slider Track */}
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {/* Slides */}
+            {[...Array(totalSlides)].map((_, slideIndex) => (
+              <div key={slideIndex} className="min-w-full px-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {testimonials
+                    .slice(
+                      slideIndex * testimonialsPerPage,
+                      (slideIndex + 1) * testimonialsPerPage
+                    )
+                    .map((testimonial) => (
+                      <div
+                        key={testimonial.id}
+                        className="bg-white rounded-xl shadow-md p-6 border border-gray-100 flex flex-col h-full"
+                      >
+                        <div className="flex items-start justify-between mb-3">
+                            <h4 className="font-semibold text-lg text-gray-900 pr-2">{testimonial.name}</h4>
+                            <testimonial.icon className="h-7 w-7 text-orange-500 flex-shrink-0 opacity-80" />
+                        </div>
+                        <div className="flex items-center mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                          ))}
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          &quot;{testimonial.content}&quot;
+                        </p>
+                      </div>
+                    ))}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-orange-50 transition-colors duration-200 group"
-          >
-            <ChevronLeft className="h-6 w-6 text-gray-600 group-hover:text-orange-600" />
-          </button>
-          
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-orange-50 transition-colors duration-200 group"
-          >
-            <ChevronRight className="h-6 w-6 text-gray-600 group-hover:text-orange-600" />
-          </button>
         </div>
 
-        {/* Testimonial Indicators */}
-        <div className="flex justify-center mb-16 space-x-2">
-          {testimonials.map((_, index) => (
+        {/* Pagination Dots */}
+        <div className="flex justify-center mt-12 space-x-2">
+          {[...Array(totalSlides)].map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentTestimonial(index)}
+              onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentTestimonial
+                currentIndex === index
                   ? 'bg-orange-600 w-8'
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
-          ))}
-        </div>
-
-        {/* All Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.position}</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                &quot;{testimonial.content.substring(0, 150)}...&quot;
-              </p>
-              
-              <div className="pt-4 border-t border-gray-100">
-                <div className="flex items-center space-x-2 text-sm text-gray-500">
-                  <Building2 className="h-4 w-4" />
-                  <span>{testimonial.project}</span>
-                </div>
-              </div>
-            </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
