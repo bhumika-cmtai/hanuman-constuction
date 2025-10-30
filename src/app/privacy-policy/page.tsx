@@ -1,4 +1,4 @@
-import { Shield } from 'lucide-react'; // Corrected: Removed unused 'FileText' import
+import { Shield } from 'lucide-react'; // Corrected: Unused 'FileText' import is removed.
 
 export default function PrivacyPolicyPage() {
   return (
@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">
           <div className="prose prose-lg max-w-none">
-            {/* Corrected: Replaced quotes with &quot; */}
+            {/* Corrected: All " characters replaced with &quot; */}
             <p className='text-black mt-5 mb-8'>
               Hanuman Constructions (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting the privacy of our clients and website visitors. This Privacy Policy outlines the types of personal information we collect through our website, how it is used, and the steps we take to ensure its protection.
             </p>
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
               <li className='text-black mt-5 mb-8'>
                 <strong>Usage Data:</strong> We may automatically collect information about how you interact with our website. This can include your IP address, browser type, pages viewed, and the duration of your visit. This data is typically anonymized and used for analytics.
               </li>
-              {/* Corrected: Replaced quotes and apostrophe with &quot; and &apos; */}
+              {/* Corrected: " and ' characters replaced with &quot; and &apos; */}
               <li className='text-black mt-5 mb-8'>
                 <strong>Cookies:</strong> Our website may use &quot;cookies&quot; to enhance user experience. Cookies are small files placed on your device that help us analyze web traffic and improve our site&apos;s functionality. You can choose to disable cookies through your browser settings.
               </li>
@@ -63,7 +63,6 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800">6. Changes to This Privacy Policy</h2>
-            {/* This section was commented out in your code. I've restored it with the necessary fixes. */}
             <p className='text-black mt-5 mb-8'>
               Hanuman Constructions has the discretion to update this privacy policy at any time. When we do, we will revise the &quot;Last Updated&quot; date at the top of this page. We encourage you to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect.
             </p>
