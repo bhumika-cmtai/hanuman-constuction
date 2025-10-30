@@ -119,7 +119,7 @@ export default function CompanyProfile() {
         <div className="space-y-8">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h3>
           <div className="relative">
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-orange-200"></div>
+            {/* <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-orange-200"></div> */}
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
