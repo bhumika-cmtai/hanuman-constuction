@@ -1,3 +1,4 @@
+"use client"
 import { Shield } from 'lucide-react'; // 'FileText' has been removed from this line.
 
 export default function PrivacyPolicyPage() {

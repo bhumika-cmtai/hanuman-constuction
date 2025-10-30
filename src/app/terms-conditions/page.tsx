@@ -1,3 +1,4 @@
+"use client"
 import { FileText } from 'lucide-react';
 
 export default function TermsAndConditionsPage() {
@@ -23,7 +24,6 @@ export default function TermsAndConditionsPage() {
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800">2. Use of the Website</h2>
-            {/* FIX: Apostrophe ' is replaced with &apos; */}
             <p>
               This website is intended to provide information about our construction services. You agree to use this site for lawful purposes only. You are prohibited from using the site in any way that could damage, disable, overburden, or impair the site or interfere with any other party&apos;s use and enjoyment of the site.
             </p>
@@ -39,13 +39,11 @@ export default function TermsAndConditionsPage() {
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800">5. Limitation of Liability</h2>
-            {/* FIX: Quotes " are replaced with &quot; */}
             <p>
               This website and its content are provided &quot;as is.&quot; Hanuman Constructions makes no warranties, expressed or implied, and hereby disclaims all warranties. In no event shall Hanuman Constructions or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.
             </p>
             
             <h2 className="text-2xl font-semibold text-gray-800">6. Indemnification</h2>
-            {/* FIX: Apostrophe ' is replaced with &apos; */}
             <p>
               You agree to indemnify, defend, and hold harmless Hanuman Constructions, its officers, directors, employees, and agents from and against all losses, expenses, damages, and costs, including reasonable attorneys&apos; fees, resulting from any violation of these terms and conditions by you.
             </p>
@@ -56,7 +54,6 @@ export default function TermsAndConditionsPage() {
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800">8. Changes to These Terms</h2>
-             {/* FIX: Quotes " are replaced with &quot; */}
             <p>
               We reserve the right to modify these terms and conditions at any time. We will post the revised terms on the website and update the &quot;Last Updated&quot; date. Your continued use of the site after any such changes constitutes your acceptance of the new terms.
             </p>
