@@ -33,10 +33,10 @@ export default function ProjectsFilter() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Filter Projects
+            Our Projects
           </h2>
           <p className="text-lg text-gray-600">
-            Browse our projects by category, stage, or year to find exactly what you&apos;re looking for
+            Bellow are our projects by category, stage, or year to find exactly what you&apos;re looking for
           </p>
         </div>
 
@@ -140,14 +140,14 @@ export default function ProjectsFilter() {
         </div>
 
         {/* Active Filter Display */}
-        <div className="bg-orange-100 rounded-xl p-6 text-center">
+        {/* <div className="bg-orange-100 rounded-xl p-6 text-center">
           <h4 className="text-lg font-semibold text-orange-800 mb-2">
             Currently Showing: {filters.find(f => f.id === activeFilter)?.name}
           </h4>
           <p className="text-orange-600">
             {filters.find(f => f.id === activeFilter)?.count} projects found
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   )

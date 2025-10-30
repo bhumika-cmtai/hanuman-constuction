@@ -71,7 +71,7 @@ export default function CTA() {
             </Link>
             
             <Link
-              href="/projects"
+              href="/gallary"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-colors duration-200 group"
             >
               View Our Work

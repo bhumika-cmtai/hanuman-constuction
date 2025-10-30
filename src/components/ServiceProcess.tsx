@@ -103,7 +103,7 @@ export default function ServiceProcess() {
 
         <div className="relative">
           {/* Process Timeline */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div>
+          {/* <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div> */}
           
           <div className="space-y-16">
             {processSteps.map((step, index) => (

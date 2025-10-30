@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <ContactHero />
-      <ContactInfo />
+      {/* <ContactInfo /> */}
       <ContactForm />
       <ContactMap />
       <ContactCTA />

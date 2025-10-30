@@ -15,7 +15,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen">
       <ProjectsHero />
       <ProjectsFilter />
-      <ProjectsGrid />
+      {/* <ProjectsGrid /> */}
       <ProjectsCTA />
     </div>
   )

@@ -55,7 +55,7 @@ export default function ContactHero() {
         </div>
 
         {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contactMethods.map((method, index) => (
             <div
               key={index}
@@ -81,7 +81,7 @@ export default function ContactHero() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Office Hours */}
         <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
